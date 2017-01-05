@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170105144432) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
-    t.text     "body"
+    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
