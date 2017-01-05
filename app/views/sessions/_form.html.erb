@@ -1,22 +1,33 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
+<div class="row">
+  <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 login-box">
+    <h1 class="text-center">Sign In</h1>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+    <%= form_for :session, url: session_path do |form| %>
+      <div class="form-group row login-box-group">
+        <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
+          <%= form.text_field :email, type: 'email', required: true, class: 'form-control login-box-input' %>
+          <%= form.label :email, class: 'login-box-label' %>
+        </div>
+      </div>
 
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
+      <div class="form-group row login-box-group">
+        <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
+          <%= form.password_field :password, required: true, class: 'form-control login-box-input' %>
+          <%= form.label :password, class: 'login-box-label' %>
+        </div>
+      </div>
 
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
+          <%= form.submit class: 'btn btn-block login-box-submit' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 text-center forgot-password">
+          <%= link_to t(".forgot_password"), new_password_path %>
+        </div>
+      </div>
     <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
   </div>
-<% end %>
+</div>

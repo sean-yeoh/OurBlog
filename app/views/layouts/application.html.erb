@@ -9,13 +9,7 @@
   </head>
 
   <body>
-    <%= link_to 'Home', root_path %>
-    <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
+    <%= render 'layouts/nav' %>
 
     <div id="flash">
       <% flash.each do |key, value| %>
@@ -23,6 +17,8 @@
       <% end %>
     </div>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -14,3 +14,69 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.login-box {
+  margin-top: 50px;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px 5px rgba(0,0,0,0.19), 0 6px 6px 5px rgba(0,0,0,0.23);
+  h1 {
+  font-weight: 300;
+  color: #009688;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 30px
+  }
+}
+
+.login-box-submit {
+  background: #cfd8dc;
+  color: #009688;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.login-box-submit:active{
+  background: #009688;
+  color: #263238;
+}
+
+.login-box-submit:hover{
+  background: #009688;
+  color: #FFF;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login-box-group {
+  margin-bottom: 30px;
+}
+
+.login-box-label {
+  color:#999;
+  font-size:14px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:20px;
+  top:6px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+.login-box-input:focus ~ label, .login-box-input:valid ~ label {
+  top:-20px;
+  font-size:14px;
+  color: #009688;
+}
+
+.forgot-password {
+  margin-bottom: 5px;
+  a {
+    color: #999;
+  }
+  a:hover {
+    color: #009688;
+    text-decoration: none;
+  }
+}
