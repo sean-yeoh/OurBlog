@@ -57,3 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # For user authentication
 gem "clearance"
+
+# Bootstrap gem for frontend
+gem 'bootstrap-sass', '~> 3.3.6'
