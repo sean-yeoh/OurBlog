@@ -60,3 +60,10 @@ gem "clearance"
 
 # Bootstrap gem for frontend
 gem 'bootstrap-sass', '~> 3.3.6'
+
+# For wysiwyg
+gem 'ckeditor', github: 'galetahub/ckeditor'
+
+# For image uploading and resizing
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
