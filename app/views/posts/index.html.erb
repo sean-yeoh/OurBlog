@@ -2,5 +2,6 @@
 <p>Find me in app/views/posts/index.html.erb</p>
 <% @posts.each do |post| %>
   <p><%= post.title %></p>
-  <p><%= post.content %></p>
+  <p><%= sanitize post.content, tags:  %w(strong em a u s sub sup img div figure figcaption p hr ol ul li table caption tbody tr td span), attributes: %w(href style border summary cellspacing cellpadding alt src title width height ) %></p>
+  <%= link_to "Edit", edit_post_path(post) %>
 <% end %>
