@@ -12,6 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ckeditor/init
+//= require ckeditor/plugins/widget/plugin
+//= require ckeditor/plugins/widget/dev/console
+//= require ckeditor/plugins/widgetselection/plugin
+//= require ckeditor/plugins/lineutils/plugin
+//= require ckeditor/plugins/image2/plugin
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+  CKEDITOR.replace('post_content');
+})
