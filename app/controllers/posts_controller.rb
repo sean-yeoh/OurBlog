@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      flash[:notice] = @post.errors.full_messages.join(', ')
+      flash.now.notice = @post.errors.full_messages.join(', ')
       render 'new'
     end
   end
