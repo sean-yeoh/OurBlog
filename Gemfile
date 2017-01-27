@@ -75,3 +75,7 @@ gem 'dropzonejs-rails'
 gem 'lightbox2-rails'
 
 gem 'alertifyjs-rails'
+
+gem "fog-aws"
+
+gem "figaro"

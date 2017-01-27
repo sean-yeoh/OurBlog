@@ -40,11 +40,6 @@ var appendContent = function(photoUrl, photoThumbUrl, photoId, albumId) {
       '<a data-lightbox=' + albumId +' href="' + photoUrl + '">' +
         '<img class="img-responsive" src="' + photoThumbUrl + '"/>' +
       '</a>' +
-      '<div class="caption">' +
-        '<p>' +
-          '<input type="checkbox" name="photos[]" id="photos_" value="' + photoId + '">' +
-        '</p>' +
-      '</div>' +
     '</div' +
   '</div');
   $("#delete-selected-button").removeAttr('disabled');
