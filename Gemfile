@@ -79,3 +79,5 @@ gem 'alertifyjs-rails'
 gem "fog-aws"
 
 gem "figaro"
+
+gem 'friendly_id', '~> 5.1.0'
