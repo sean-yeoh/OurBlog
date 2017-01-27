@@ -1,0 +1,19 @@
+<hr class="hr">
+<div id="album-form" class="row">
+  <%= form_for @album, remote: true do |form| %>
+    <div class="pull-left col-md-8 col-xs-8 col-lg-8 col-sm-8 form-group album_name_div">
+      <%= form.label :name, hidden: true %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Album Name" %>
+    </div>
+
+    <div class="pull-right">
+      <%= form.submit class: "btn btn-warning" %>
+      <% if @album.new_record? %>
+      <%= link_to "Cancel", cancel_new_path, remote: true, id: "cancel_new", class: "btn btn-danger" %>
+    <% else %>
+      <%= link_to "Cancel", cancel_edit_path, remote: true, id: "cancel_edit", class: "btn btn-danger" %>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+<hr class="hr">

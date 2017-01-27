@@ -1,20 +1,22 @@
-<ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#blog">Blog</a></li>
-  <li><a data-toggle="tab" href="#picture">Pictures</a></li>
-</ul>
+<div class="btn-group btn-group-justified">
+  <%= link_to "Blog", root_path, class: "btn btn-primary" %>
+  <%= link_to "Photos", photos_all_path, class: "btn btn-default" %>
+</div>
 
-<div class="tab-content">
-  <div id="blog" class="tab-pane fade in active">
+<br>
+
+<div class="row">
+  <div class="col-md-10 col-lg-10 col-sm-10 col-xs-10">
     <% @posts.each do |post| %>
-      <div style="border: 1px solid black">
-      <p><%= post.title %></p>
-      <p><%= sanitize post.content, tags:  %w(strong em a u s sub sup img div figure figcaption p hr ol ul li table caption tbody tr td span), attributes: %w(href style border summary cellspacing cellpadding alt src title width height ) %></p>
-      <%= link_to "Edit", edit_post_path(post) %>
+      <div class="post-home-page">
+        <h2 class="post-title text-center"><%= link_to post.title, post_path(post) %></h2>
+        <p class="text-center posted-by"><%= post.created_at.strftime("Posted on %I:%M %p, %A, %d %B %Y") %> by <%= post.user.name %></p>
+        <p><%= sanitize post.content, tags:  %w(strong em a u s sub sup img div figure figcaption p hr ol ul li table caption tbody tr td span), attributes: %w(href style border summary cellspacing cellpadding alt src title width height class ) %></p>
       </div>
     <% end %>
   </div>
-  <div id="picture" class="tab-pane fade">
 
+  <div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+    <p>Posts archive</p>
   </div>
 </div>
-

@@ -1,2 +1,9 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="row">
+  <div class="pull-left">
+    <%= link_to 'Back to post', post_path(@post), class: 'btn btn-default' %>
+  </div>
+</div>
+
+<br>
+
+<%= render 'form', :post => @post %>
