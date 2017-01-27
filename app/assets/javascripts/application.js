@@ -22,6 +22,7 @@
 //= require ckeditor/plugins/lineutils/plugin
 //= require ckeditor/plugins/image2/plugin
 //= require alertify
+//= require album-dropzone
 //= require_tree .
 //= stub footer
 
