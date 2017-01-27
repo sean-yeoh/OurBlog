@@ -81,3 +81,5 @@ gem "fog-aws"
 gem "figaro"
 
 gem 'friendly_id', '~> 5.1.0'
+
+ruby "2.3.1"
