@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="pull-left">
+    <%= link_to "Go to Albums", albums_path, class: 'btn btn-default' %>
+  </div>
+  <% if signed_in? %>
+    <div class="pull-right">
+      <%= link_to "Edit Album", edit_album_with_photos_path, class: "btn btn-warning" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="row" id="album-name-div">
+  <div class="col-md-12">
+    <h1 class="text-center"><%= @album.name %></h1>
+  </div>
+</div>
+
+<% if signed_in? %>
+  <div class="row">
+    <div class="pull-left">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Upload New</button>
+    </div>
+
+    <div class="pull-right">
+      <%= button_to "Delete Album", album_path, 'data-confirm': "Are you sure?", method: :delete, class: 'btn btn-danger' %>
+    </div>
+  </div>
+<% end %>
+
+<br><br>
+
+<div class="row" id="album-photos">
+  <% if @album.photos.empty? %>
+    <h3 class="text-center" id="no-photo"><small>No Photos In This Album</small></h3>
+  <% else %>
+    <% @album.photos.each do |photo| %>
+      <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 thumb text-center">
+        <div class="thumbnail">
+          <%= link_to image_tag(photo.filename.thumb.url, class: "img-responsive"), photo.filename.url, data: { lightbox: @album.id } %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Upload New</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for [@album, @photo], html: { class: "dropzone" } do |form| %>
+          <div class="fallback">
+            <%= form.label :filename, hidden: true %>
+            <%= form.file_field :filename, multiple: true, name: "photo[filename]" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "footer" %>

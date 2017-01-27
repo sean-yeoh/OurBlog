@@ -1,2 +1,26 @@
-<h1>Albums#index</h1>
-<p>Find me in app/views/albums/index.html.erb</p>
+<div class="btn-group btn-group-justified">
+  <%= link_to "Blog", root_path, class: "btn btn-default" %>
+  <%= link_to "Photos", photos_all_path, class: "btn btn-primary" %>
+</div>
+
+<%= render 'photos/photos_tabs' %>
+
+<br class="br">
+
+<div id="album-form-div">
+</div>
+
+<% @albums.each do |album| %>
+  <div class="col-lg-4 col-md-4 col-xs-6 col-sm-6 thumb">
+    <div class="thumbnail">
+      <% if album.photos.empty? %>
+        <%= link_to image_tag("no-photos.png", class: 'img-responsive'), album_path(album) %>
+      <% else %>
+        <%= link_to image_tag(album.photos.last.filename.thumb.url, class: 'img-responsive'), album_path(album) %>
+      <% end %>
+      <div class="caption">
+        <%= link_to album.name, album_path(album) %>
+      </div>
+    </div>
+  </div>
+<% end %>

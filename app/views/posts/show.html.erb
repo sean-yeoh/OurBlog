@@ -1,2 +1,24 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="row">
+  <div class="pull-left">
+    <%= link_to 'Back to Blog', posts_path, class: 'btn btn-default' %>
+  </div>
+
+  <% if signed_in? %>
+    <div class="pull-right">
+      <%= link_to 'Edit Post', edit_post_path, class: 'btn btn-warning' %>
+      <%= link_to 'Delete Post', post_path, 'data-confirm': "Are you sure?", method: :delete, class: 'btn btn-danger' %>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+    <h2 class="post-title text-center"><%= @post.title %></h2>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+    <p class="text-center posted-by"><%= @post.created_at.strftime("Posted on %I:%M %p, %A, %d %B %Y") %> by <%= @post.user.name %></p>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+    <p><%= sanitize @post.content, tags:  %w(strong em a u s sub sup img div figure figcaption p hr ol ul li table caption tbody tr td span), attributes: %w(href style border summary cellspacing cellpadding alt src title width height class ) %></p>
+  </div>
+</div>

@@ -18,9 +18,12 @@
 //= require ckeditor/plugins/widgetselection/plugin
 //= require ckeditor/plugins/lineutils/plugin
 //= require ckeditor/plugins/image2/plugin
+//= require dropzone
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require alertify
 //= require_tree .
+//= stub footer
 
 document.addEventListener("turbolinks:load", function() {
   CKEDITOR.replace('post_content');

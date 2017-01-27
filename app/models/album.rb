@@ -1,5 +1,6 @@
 class Album < ApplicationRecord
-  mount_uploaders :photos, PhotoUploader
   validates :name, presence: true, uniqueness: true
-  validates :photos, presence: true
+  belongs_to :user
+  has_many :photos, dependent: :destroy
+  default_scope  { order(:created_at => :desc) }
 end

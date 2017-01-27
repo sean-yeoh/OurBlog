@@ -7,7 +7,7 @@
 
 ( function() {
 
-	var template = '<img alt="" src="" />',
+	var template = '<img class="ckeditor-img-upload" alt="" src="" />',
 		templateBlock = new CKEDITOR.template(
 			'<figure class="{captionedClass}">' +
 				template +

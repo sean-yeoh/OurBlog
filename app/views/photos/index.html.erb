@@ -1,0 +1,28 @@
+<div class="btn-group btn-group-justified">
+  <%= link_to "Blog", root_path, class: "btn btn-default" %>
+  <%= link_to "Photos", photos_all_path, class: "btn btn-primary" %>
+</div>
+
+<%= render 'photos_tabs' %>
+
+<br>
+
+<div class="row" id="album-photos">
+  <% @album_photos.each do |photo| %>
+    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 thumb text-center">
+      <div class="thumbnail">
+        <%= link_to image_tag(photo.filename.thumb.url, class: "img-responsive"), photo.filename.url, data: { lightbox: "all-photos" } %>
+      </div>
+    </div>
+  <% end %>
+
+  <% @post_photos.each do |photo| %>
+    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 thumb text-center">
+      <div class="thumbnail">
+        <%= link_to image_tag(photo.url(:thumb), class: "img-responsive"), photo.url, data: { lightbox: "all-photos" } %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= javascript_include_tag "footer" %>

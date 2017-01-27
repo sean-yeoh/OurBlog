@@ -67,3 +67,11 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 # For image uploading and resizing
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+
+# For ajax image upload
+gem 'dropzonejs-rails'
+
+# For displaying image
+gem 'lightbox2-rails'
+
+gem 'alertifyjs-rails'
