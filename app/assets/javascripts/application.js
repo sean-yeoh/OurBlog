@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dropzone
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require ckeditor/init
 //= require ckeditor/plugins/widget/plugin
@@ -19,8 +21,6 @@
 //= require ckeditor/plugins/widgetselection/plugin
 //= require ckeditor/plugins/lineutils/plugin
 //= require ckeditor/plugins/image2/plugin
-//= require dropzone
-//= require bootstrap-sprockets
 //= require alertify
 //= require_tree .
 //= stub footer
