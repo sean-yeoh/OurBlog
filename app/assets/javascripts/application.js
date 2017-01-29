@@ -25,6 +25,22 @@
 //= require_tree .
 //= stub footer
 
-document.addEventListener("turbolinks:load", function() {
+$(document).on("turbolinks:load", function() {
   CKEDITOR.replace('post_content');
+
+
+  var appendContent = function(photoUrl, photoThumbUrl, photoId, albumId) {
+  $("#album-photos").prepend(
+
+  '<div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 thumb text-center">' +
+    '<div class="thumbnail">' +
+      '<a data-lightbox=' + albumId +' href="' + photoUrl + '">' +
+        '<img class="img-responsive" src="' + photoThumbUrl + '"/>' +
+      '</a>' +
+    '</div' +
+  '</div');
+  $("#delete-selected-button").removeAttr('disabled');
+  $("#delete-all-button").removeAttr('disabled');
+  $("#no-photo").html("");
+  };
 })
