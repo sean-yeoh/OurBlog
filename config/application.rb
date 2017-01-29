@@ -13,7 +13,8 @@ module OurBlog
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = 'Kuala Lumpur'
 
-    config.assets.precompile += %w( album-dropzone.js )
+    config.assets.precompile += %w( alertify.css )
+    config.assets.precompile += %w( alertify.js )
     config.assets.precompile += %w( dropzone.css )
     config.assets.precompile += %w( dropzone.js )
     config.assets.precompile += Ckeditor.assets
