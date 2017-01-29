@@ -1,3 +1,15 @@
+For async true
+<%= form_for [@album, @photo] do |form| %>
+    <%= form.label :filename, hidden: true %>
+    <%= form.file_field :filename, multiple: true, name: "photo[filename]", id: "kartik-uploadasync-true" %>
+<% end %>
+
+For async false
+<%= form_for [@album, @photo] do |form| %>
+    <%= form.label :filename, hidden: true %>
+    <%= form.file_field :filename, multiple: true, name: "photo[filename]", id: "kartik-uploadasync-false" %>
+<% end %>
+
 <div class="row">
   <div class="pull-left">
     <%= link_to "Go to Albums", albums_path, class: 'btn btn-default' %>
