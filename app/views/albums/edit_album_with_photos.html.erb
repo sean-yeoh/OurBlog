@@ -20,9 +20,13 @@
 </div>
 
 <%= form_tag delete_selected_path, method: :delete do %>
+
   <div class="row">
-    <div class="col-md-12 text-right">
+    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 text-left">
       <%= submit_tag 'Delete Selected', class: 'btn btn-danger', disabled: @album.photos.empty?, id: "delete-selected-button" %>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 text-right">
       <%= link_to "Delete All", delete_all_path, 'data-confirm': "Are you sure?", class: 'btn btn-danger', method: :delete, disabled: @album.photos.empty?, id: "delete-all-button" %>
     </div>
   </div>
