@@ -12,19 +12,32 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
+//= require dropzone
+//= require turbolinks
 //= require ckeditor/init
 //= require ckeditor/plugins/widget/plugin
 //= require ckeditor/plugins/widget/dev/console
 //= require ckeditor/plugins/widgetselection/plugin
 //= require ckeditor/plugins/lineutils/plugin
 //= require ckeditor/plugins/image2/plugin
-//= require dropzone
-//= require bootstrap-sprockets
-//= require turbolinks
 //= require alertify
+//= require kartik/js/plugins/canvas-to-blob
+//= require kartik/js/plugins/canvas-to-blob.min
+//= require kartik/js/plugins/purify
+//= require kartik/js/plugins/purify.min
+//= require kartik/js/plugins/sortable
+//= require kartik/js/plugins/sortable.min
+//= require kartik/js/fileinput
+//= require kartik/js/fileinput.min
 //= require_tree .
+
 //= stub footer
 
-document.addEventListener("turbolinks:load", function() {
+$(document).on("turbolinks:load", function() {
   CKEDITOR.replace('post_content');
+
+
+
+
 })

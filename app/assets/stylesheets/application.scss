@@ -19,6 +19,9 @@
 @import "alertify";
 @import "alertify/default";
 @import "alertify/bootstrap";
+@import "kartik/css/fileinput";
+@import "kartik/css/fileinput.min";
+
 
 .login-box {
   margin-top: 50px;
@@ -92,10 +95,6 @@
 
 .post-title {
   font-weight:bold;
-}
-
-.posted-by {
-  border-bottom: 1px solid #a6a6a6;
 }
 
 .dropzone {
