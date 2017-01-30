@@ -1,4 +1,17 @@
 <div class="row">
+  <%= form_for [@album, @upload] do |form| %>
+  <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+    <%= form.label :filename, "Upload New" %>
+    <%= form.file_field :filename, multiple: true, id: "kartik-upload" %>
+  </div>
+
+  <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-3 col-lg-offset-3 col-md-6 col-sm-6 col-xs-6 col-lg-6">
+    <%= form.submit "Upload", class: "btn btn-primary btn-block" %>
+  </div>
+  <% end %>
+</div>
+
+<div class="row">
   <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 text-left">
     <%= link_to "Go to Albums", albums_path, class: 'btn btn-default' %>
   </div>
@@ -30,7 +43,27 @@
 
 <br><br>
 
-<div class="row" id="album-photos">
+<div class="row">
+  <% @album.uploads.each do |upload| %>
+    <% upload.filename.each do |photo| %>
+      <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 thumb text-center">
+        <div class="thumbnail">
+          <%= link_to image_tag(photo.thumb.url, class: "img-responsive"), photo.url, data: { lightbox: @album.id } %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% @album.photos.each do |photo| %>
+    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 thumb text-center">
+      <div class="thumbnail">
+        <%= link_to image_tag(photo.filename.thumb.url, class: "img-responsive"), photo.filename.url, data: { lightbox: @album.id } %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!-- <div class="row" id="album-photos">
   <% if @album.photos.empty? %>
     <h3 class="text-center" id="no-photo"><small>No Photos In This Album</small></h3>
   <% else %>
@@ -42,7 +75,7 @@
       </div>
     <% end %>
   <% end %>
-</div>
+</div> -->
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
