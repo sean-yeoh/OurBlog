@@ -4,6 +4,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
+  process :auto_orient
   # Choose what kind of storage to use for this uploader:
   # storage :file
   storage :fog
@@ -12,6 +13,13 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def auto_orient
+    manipulate! do |img|
+      img.auto_orient
+      img
+    end
   end
 
   version :thumb do
