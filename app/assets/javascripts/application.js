@@ -23,14 +23,6 @@
 //= require ckeditor/plugins/image2/plugin
 //= require alertify
 //= require_tree .
-//= require kartik/js/plugins/canvas-to-blob
-//= require kartik/js/plugins/canvas-to-blob.min
-//= require kartik/js/plugins/purify
-//= require kartik/js/plugins/purify.min
-//= require kartik/js/plugins/sortable
-//= require kartik/js/plugins/sortable.min
-//= require kartik/js/fileinput
-//= require kartik/js/fileinput.min
 //= stub footer
 
 $(document).on("turbolinks:load", function() {
