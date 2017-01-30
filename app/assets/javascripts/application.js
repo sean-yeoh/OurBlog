@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require dropzone
-//= require bootstrap-sprockets
 //= require turbolinks
 //= require ckeditor/init
 //= require ckeditor/plugins/widget/plugin
@@ -23,6 +22,7 @@
 //= require ckeditor/plugins/image2/plugin
 //= require alertify
 //= require_tree .
+//= require bootstrap-sprockets
 //= stub footer
 
 $(document).on("turbolinks:load", function() {
