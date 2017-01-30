@@ -1,12 +1,13 @@
 <div class="row">
-  <div class="pull-left">
+  <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 text-left">
     <%= link_to "Back to #{@album.name}", album_path(@album), class: 'btn btn-default' %>
   </div>
-  <% if signed_in? %>
-    <div class="pull-right">
+
+  <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 text-right">
+    <% if signed_in? %>
       <%= link_to "Edit Album Name", edit_album_path, id: "edit_album_link", class: "btn btn-warning", remote: true %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <div class="row" id="album-name-div">
@@ -20,7 +21,7 @@
 
 <%= form_tag delete_selected_path, method: :delete do %>
   <div class="row">
-    <div class="pull-right">
+    <div class="col-md-12 text-right">
       <%= submit_tag 'Delete Selected', class: 'btn btn-danger', disabled: @album.photos.empty?, id: "delete-selected-button" %>
       <%= link_to "Delete All", delete_all_path, 'data-confirm': "Are you sure?", class: 'btn btn-danger', method: :delete, disabled: @album.photos.empty?, id: "delete-all-button" %>
     </div>
