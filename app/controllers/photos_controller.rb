@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   def index
-    @album_photos = Photo.all
+    @album_photos = Photo.all.page params[:page]
     @active = :photos
   end
 
