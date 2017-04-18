@@ -90,10 +90,6 @@
   font-size: 20px;
 }
 
-.post-title {
-  font-weight:bold;
-}
-
 .dropzone {
   background: #f4f4f4 !important;
   border: none !important;
@@ -115,4 +111,9 @@
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px 5px 5px 5px;
+}
+
+.post-title {
+  font-weight: bold;
+  word-wrap: break-word;
 }
