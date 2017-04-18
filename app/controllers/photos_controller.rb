@@ -1,8 +1,7 @@
 class PhotosController < ApplicationController
   def index
     @album_photos = Photo.all
-    @post_photos = Ckeditor::Picture.all
-    @active = :all_photos
+    @active = :photos
   end
 
   def create

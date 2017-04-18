@@ -1,7 +1,7 @@
 <h2><span class="glyphicon glyphicon-picture"></span> Photos</h2>
 
 <ul class="nav nav-pills">
-  <li class="<%= active_page(:all_photos) %>"><%= link_to "All Photos", photos_path %></li>
+  <li class="<%= active_page(:photos) %>"><%= link_to "All Photos", photos_path %></li>
   <li class="<%= active_page(:albums) %>"><%= link_to "Albums", albums_path %></li>
   <% if active_page(:albums) == "active" && signed_in? %>
     <li class="pull-right"><%= link_to "Create album", new_album_path, id: "new_album_link", remote: true, class: 'btn btn-default' %></li>

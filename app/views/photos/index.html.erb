@@ -15,14 +15,6 @@
       </div>
     </div>
   <% end %>
-
-  <% @post_photos.each do |photo| %>
-    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 thumb text-center">
-      <div class="thumbnail">
-        <%= link_to image_tag(photo.url(:thumb), class: "img-responsive"), photo.url, data: { lightbox: "all-photos" } %>
-      </div>
-    </div>
-  <% end %>
 </div>
 
 <%= javascript_include_tag "footer" %>
